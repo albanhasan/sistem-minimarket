@@ -4,6 +4,8 @@
  */
 package com.unsada.pbo;
 
+import com.unsada.pbo.masterData.Produk;
+
 /**
  *
  * @author Sebastian
@@ -14,7 +16,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Produk jellyDrink = new Produk("jelly", 99, 5000, "minuman", "m");
+       
+       System.out.println("jelydrink kategory: "+jellyDrink.getKodeKategori());
+       
     }
     
 }
