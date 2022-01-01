@@ -1,17 +1,14 @@
 package com.unsada.pbo.masterData;
 
-public class Produk extends Kategori{
+public class Produk{
 	private String namaProduk;
 	private int stokProduk;
 	private double hargaProduk;
 	
-	public Produk(String namaProduk, int stokProduk, double hargaProduk,
-			String namaKategori, String kodeKategori) {
+	public Produk(String namaProduk, int stokProduk, double hargaProduk) {
 		this.namaProduk = namaProduk;
 		this.stokProduk = stokProduk;
 		this.hargaProduk = hargaProduk;
-		super.setNamaKategori(namaKategori);
-		super.setKodeKategori(kodeKategori);
 	}
 	
 	public String getNamaProduk() {
