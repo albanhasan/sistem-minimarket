@@ -2,7 +2,7 @@ package com.unsada.pbo.util;
 
 import java.util.Date;
 
-public class Pembelian {
+public class Pembelian extends Keranjang{
     private String kode_pembelian;
     private Date tanggal_transaksi;
     private double total_keseluruhan;
