@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.unsada.pbo.masterData.Kasir;
+import com.unsada.pbo.masterData.Produk;
 
 public class InitialData {
 	
@@ -30,6 +31,15 @@ public class InitialData {
 		return kasirs;
 	}
 	
-	
+	public static List<Produk> getInitialProducts() {
+		List<Produk> products = new ArrayList<Produk>();
+		
+		Produk pepsodent = new Produk("pepsodent", 99, 13000);
+		
+		
+		products.add(pepsodent);
+		
+		return products;
+	}
 	
 }
