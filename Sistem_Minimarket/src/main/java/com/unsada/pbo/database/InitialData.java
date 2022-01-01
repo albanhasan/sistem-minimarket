@@ -38,26 +38,26 @@ public class InitialData {
 	public static List<Produk> getInitialProducts() {
 		List<Produk> products = new ArrayList<Produk>();
 		
-		Produk pepsodent = new Produk("pepsodent", 99, 13000);
-		Produk naget = new Produk("naget", 89, 25000);
-                Produk roti = new Produk("roti", 70, 5000);
-                Produk c1000 = new Produk("c1000", 75, 7500);
-                Produk popcorn = new Produk("popcorn", 83, 10000);
-                Produk bengbeng = new Produk("bengbeng", 86, 2500);
-                Produk fiesta = new Produk("fiesta", 15, 16000);
-                Produk tisu = new Produk("tisu", 77, 8000);
-                Produk sprite = new Produk("sprite", 90, 5000);
-                Produk fanta = new Produk("fanta", 90, 5000);
-                Produk cocacola = new Produk("cocacola", 90, 5000);
-                Produk oreo = new Produk("oreo", 92, 4000);
-                Produk masker = new Produk("masker", 95, 10000);
-                Produk sabun = new Produk("sabun", 98, 5000);
-                Produk whiskas = new Produk("whiskas", 90, 14000);
-                Produk larutan = new Produk("larutan", 90, 6000);
-                Produk saos = new Produk("saos", 99, 7000);
-                Produk kecap = new Produk("kecap", 99, 4000);
-                Produk boncabe = new Produk("boncabe", 99, 6000);
-                Produk tehbotol = new Produk("tehbotol", 99, 6000);
+		Produk pepsodent = new Produk(1, "pepsodent", 99, 13000);
+		Produk naget = new Produk(2, "naget", 89, 25000);
+                Produk roti = new Produk(3,"roti", 70, 5000);
+                Produk c1000 = new Produk(4,"c1000", 75, 7500);
+                Produk popcorn = new Produk(5, "popcorn", 83, 10000);
+                Produk bengbeng = new Produk(6, "bengbeng", 86, 2500);
+                Produk fiesta = new Produk(7,"fiesta", 15, 16000);
+                Produk tisu = new Produk(9, "tisu", 77, 8000);
+                Produk sprite = new Produk(10,"sprite", 90, 5000);
+                Produk fanta = new Produk(11,"fanta", 90, 5000);
+                Produk cocacola = new Produk(12,"cocacola", 90, 5000);
+                Produk oreo = new Produk(13,"oreo", 92, 4000);
+                Produk masker = new Produk(14,"masker", 95, 10000);
+                Produk sabun = new Produk(15, "sabun", 98, 5000);
+                Produk whiskas = new Produk(16, "whiskas", 90, 14000);
+                Produk larutan = new Produk(17,"larutan", 90, 6000);
+                Produk saos = new Produk(18,"saos", 99, 7000);
+                Produk kecap = new Produk(19,"kecap", 99, 4000);
+                Produk boncabe = new Produk(19,"boncabe", 99, 6000);
+                Produk tehbotol = new Produk(20, "tehbotol", 99, 6000);
 		
 		products.add(pepsodent);
                 products.add(naget);
@@ -82,4 +82,16 @@ public class InitialData {
 		return products;
 	}
 	
+	public static Produk getProductFromListById(List<Produk> products, long idProduk) {
+		
+		Produk produk = null;
+		
+		for(Produk product : products) {
+			if(product.getId_produk() == idProduk) {
+				produk = product;
+			}
+		}
+		
+		return produk;
+	}
 }
