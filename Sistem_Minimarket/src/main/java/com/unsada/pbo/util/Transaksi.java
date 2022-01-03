@@ -1,5 +1,6 @@
 package com.unsada.pbo.util;
 
+import com.unsada.pbo.masterData.Kasir;
 import com.unsada.pbo.masterData.Produk;
 import java.util.Date;
 import java.util.Map;
@@ -42,14 +43,17 @@ public class Transaksi extends Keranjang{
         return this.total_keseluruhan;
     }
     
-    public void strukPembelian(double uang){
+    public void strukPembelian(double uang, Kasir kasir){
         System.out.println("---Struk Transaksi---");
         System.out.println("Kode Transaksi: "+ this.kode_pembelian);
         System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
+        System.out.println("======================");
         super.getListKeranjang();
+        System.out.println("======================");
         System.out.println("Total Transaksi: " + this.total_keseluruhan);
         System.out.println("Pembayaran: " + uang);
         System.out.println("Kembalian: " + (uang-this.total_keseluruhan));
+        System.out.println("Kasir : "+kasir.getNamaKasir() + " ("+kasir.getNoHp()+")");
     }
     
 //    public static void main(String[] args) {

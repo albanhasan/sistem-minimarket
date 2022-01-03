@@ -163,15 +163,21 @@ public class Main {
                     		    	if(bayar >= jumlah ) {
                 		    			System.out.println("Belanja berhasil");
                     		    		
-                    		    		transaksi.strukPembelian(bayar);
+                    		    		transaksi.strukPembelian(bayar, kasir);
                     		    		
                     		    		transactions.add(transaksi);
                     		    		
                     		    		System.out.println("Tekan apapun untuk kembali ke menu awal");
                     		    		
-                    		    		Scanner restartSc = new Scanner(System.in);
-                    		    		doCheckout = false;
-                    		    		isDoShowBelanja = false;
+                    		    		 try {
+                    		    			 doCheckout = false;
+                         		    		isDoShowBelanja = false;
+         									System.in.read();
+         								} catch (IOException e) {
+         									// TODO Auto-generated catch block
+         									e.printStackTrace();
+         								}
+                    		    		
                     		    	} else {
                     		    		System.out.println("Uang anda tidak cukup!");
                     		    		
