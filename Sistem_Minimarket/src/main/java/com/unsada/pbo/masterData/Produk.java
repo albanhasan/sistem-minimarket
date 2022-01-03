@@ -33,6 +33,12 @@ public class Produk{
 	public void setStokProduk(int stokProduk) {
 		this.stokProduk = stokProduk;
 	}
+        public void addStokProduk(int stokProduk) {
+		this.stokProduk += stokProduk;
+	}
+        public void subStokProduk(int stokProduk) {
+		this.stokProduk -= stokProduk;
+	}
 	public double getHargaProduk() {
 		return hargaProduk;
 	}
