@@ -6,23 +6,43 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Keranjang {
-    private Map<Produk, Integer> keranjang = new HashMap<>();
+    private Map<Produk, Penjualan> keranjang = new HashMap<>();
     
     public void addToKeranjang(Produk produk, int jumlah){
-        if(this.keranjang.putIfAbsent(produk, jumlah) != null){
-            this.keranjang.put(produk, jumlah+keranjang.get(produk));
+        if(produk.getStokProduk()<jumlah){
+            System.out.println("Stok "+ produk.getNamaProduk() +" tidak cukup");
+        }else {
+            double hargaTotal = produk.getHargaProduk() * jumlah;
+            Penjualan item = new Penjualan(jumlah, hargaTotal);
+            if(this.keranjang.putIfAbsent(produk, item) != null){
+                Penjualan temp = this.keranjang.get(produk);
+                item.setJumlah_produk(jumlah + temp.getJumlah_produk());
+                item.setTotal_harga(hargaTotal+temp.getTotal_harga());
+                this.keranjang.replace(produk, item);
+            }
         }
     }
     
-    public void removeFromKeranjag(Produk produk, int jumlah){
-        if(keranjang.containsKey(produk)){
-            int temp = keranjang.get(produk)-jumlah;
-            if(temp<1) keranjang.remove(produk);
-            else keranjang.replace(produk, temp);
+    public void removeFromKeranjang(Produk produk, int jumlah){
+        if(this.keranjang.containsKey(produk)){
+            Penjualan item = this.keranjang.get(produk);
+            if(item.getJumlah_produk() >= jumlah){
+                int temp = item.getJumlah_produk()-jumlah;
+                if(temp == 0){ 
+                    this.keranjang.remove(produk);
+                }
+                else {
+                    item.setJumlah_produk(temp);
+                    item.setTotal_harga(temp * produk.getHargaProduk());
+                }
+            }
+            else{
+                System.out.println("jumlah "+ produk.getNamaProduk() +" di dalam keranjang hanya "+keranjang.get(produk));
+            }
         }
     }
 
-    public Map<Produk, Integer> getKeranjang(){
+    public Map<Produk, Penjualan> getKeranjang(){
         return this.keranjang;
     }
 }
