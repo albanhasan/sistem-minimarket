@@ -74,7 +74,7 @@ public class Main {
                         	    	for(Produk produk : products) {
                         	    		productMap.put(index, produk);
                         	    		
-                        	    		System.out.println(index+". "+produk.getNamaProduk() + " ("+produk.getHargaProduk()+")");
+                        	    		System.out.println(index+". "+produk.getNamaProduk() + " ("+produk.getHargaProduk()+") | Sisa stok : "+produk.getStokProduk());
                         	    		
                         	    		index++;
                         	    	}
@@ -113,7 +113,7 @@ public class Main {
                 			} else if(menuBelanja == 2) {
                 				 boolean isShowRetur = true;
                                  while(isShowRetur){
-                                     Map<Integer, Produk> cartMap = transaksi.getListKeranjang();
+                                     Map<Integer, Produk> cartMap = transaksi.printData();
                                      if(cartMap.size()>0){
                                          System.out.println("pilih angka produk: ");
                                          Scanner sc = new Scanner(System.in);
@@ -136,9 +136,15 @@ public class Main {
                                  }
                 			} else if(menuBelanja == 3) {
                 				boolean isShowKeranjang = true;
-                				System.out.println("Berikut adalah isi keranjang anda : ");
-            					Map<Integer, Produk> keranjangs = transaksi.getListKeranjang();
                 				
+            					Map<Produk, Penjualan> keranjangs = transaksi.getKeranjang();
+                				
+            					if(!keranjangs.isEmpty()) {
+            						System.out.println("Berikut adalah isi keranjang anda : ");
+            						transaksi.printData();
+            					}
+            					
+            					
                 				System.out.println("Tekan apapun untuk kembali");
                 				 
                 				   try {
@@ -161,7 +167,7 @@ public class Main {
                     		    	if(bayar >= jumlah ) {
                 		    			System.out.println("Belanja berhasil");
                     		    		transaksi.setUang(bayar);
-                    		    		transaksi.strukPembelian();
+                    		    		transaksi.printData(kasir);;
                     		    		
                     		    		transactions.add(transaksi);
                     		    		
@@ -198,7 +204,7 @@ public class Main {
                                     if(transactions.isEmpty()) System.out.println("Belum ada transaksi");
                                     else transactions.forEach(transaksi -> {
                                         System.out.println("\n----------------------------------\n");
-                                        transaksi.strukPembelian();
+                                        transaksi.printData(kasir);
                                         System.out.println("\n----------------------------------\n");
                                     });
         				

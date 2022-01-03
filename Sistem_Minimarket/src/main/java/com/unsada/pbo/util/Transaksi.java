@@ -50,18 +50,18 @@ public class Transaksi extends Keranjang{
         return this.total_keseluruhan;
     }
     
-    public void strukPembelian(){
-        System.out.println("---Struk Transaksi---");
+    public void printData(Kasir kasir) {
+    	System.out.println("---Struk Transaksi---");
         System.out.println("Kode Transaksi: "+ this.kode_pembelian);
         System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
         System.out.println("======================");
-        super.getListKeranjang();
+        super.printData();
         System.out.println("======================");
         System.out.println("Total Transaksi: " + this.total_keseluruhan);
         System.out.println("Pembayaran: " + this.uang);
         System.out.println("Kembalian: " + (this.uang-this.total_keseluruhan));
         System.out.println("Kasir : "+this.kasir.getNamaKasir() + " ("+this.kasir.getNoHp()+")");
-    }
+   }
     
 //    public static void main(String[] args) {
 //        Transaksi t = new Transaksi("1");

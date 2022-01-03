@@ -41,8 +41,12 @@ public class Keranjang {
         }
     }
 
-    public Map<Integer, Produk> getListKeranjang(){
-        Map<Integer, Produk> cartMap = new HashMap<>();
+    public Map<Produk, Penjualan> getKeranjang() {
+        return this.keranjang;
+    }
+    
+    public Map<Integer, Produk> printData() {
+    	Map<Integer, Produk> cartMap = new HashMap<>();
         int indexKeranjang = 1;
         for(Map.Entry<Produk, Penjualan> entry : this.keranjang.entrySet()){
             Produk key = entry.getKey();
@@ -52,10 +56,6 @@ public class Keranjang {
         }
         
         return cartMap;
-    }
-
-    public Map<Produk, Penjualan> getKeranjang() {
-        return this.keranjang;
     }
     
 }

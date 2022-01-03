@@ -48,6 +48,10 @@ public class Kasir {
 		this.noHp = noHp;
 	}
 	
+	public boolean setIsLogin(boolean isLogin) {
+		return this.isLogin = isLogin;
+	}
+	
 	public boolean isLogin() {
 		return isLogin;
 	}
