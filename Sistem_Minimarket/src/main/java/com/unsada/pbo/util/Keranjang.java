@@ -9,9 +9,6 @@ public class Keranjang {
     private Map<Produk, Penjualan> keranjang = new HashMap<>();
     
     public void addToKeranjang(Produk produk, int jumlah){
-        if(produk.getStokProduk()<jumlah){
-            System.out.println("Stok "+ produk.getNamaProduk() +" tidak cukup");
-        }else {
             double hargaTotal = produk.getHargaProduk() * jumlah;
             Penjualan item = new Penjualan(jumlah, hargaTotal);
             if(this.keranjang.putIfAbsent(produk, item) != null){
@@ -20,7 +17,6 @@ public class Keranjang {
                 item.setTotal_harga(hargaTotal+temp.getTotal_harga());
                 this.keranjang.replace(produk, item);
             }
-        }
     }
     
     public void removeFromKeranjang(Produk produk, int jumlah){

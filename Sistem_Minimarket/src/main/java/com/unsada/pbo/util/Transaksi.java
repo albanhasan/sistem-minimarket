@@ -56,8 +56,8 @@ public class Transaksi extends Keranjang{
         System.out.println("Kembalian: " + (this.total_keseluruhan-uang));
     }
     
-    public static void main(String[] args) {
-        Transaksi t = new Transaksi("1");
-        System.out.println(t.getTanggal_transaksi());
-    }
+//    public static void main(String[] args) {
+//        Transaksi t = new Transaksi("1");
+//        System.out.println(t.getTanggal_transaksi());
+//    }
 }
