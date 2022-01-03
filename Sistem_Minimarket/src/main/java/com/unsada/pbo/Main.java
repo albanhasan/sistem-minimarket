@@ -41,110 +41,101 @@ public class Main {
     		if(kasir != null) {
     			List<Produk> products = alfamart.getProdutcs();
     	    	
+    			List<Transaksi> transactions = new ArrayList<>();
+    			
     	    	Transaksi transaksi = new Transaksi(sdf.format(new Date()));
     	    	
     	    	Map<Integer, Produk> productMap = new HashMap<Integer, Produk>();
     	    	
-    			boolean isStartPurchase = true;
-    			
-    			System.out.println("---Alfamart-----");
-    			System.out.println("1. Belanja");
-    			System.out.println("2. Retur");
-    			System.out.println("3. Checkout");
-    			System.out.println("4. Keluar");
-    			Scanner menuSc = new Scanner(System.in);
-    			int menu = menuSc.nextInt();
-    			
-    			if(menu == 1) {
-    				boolean isShowProduct = true;
-    				while (isShowProduct) {
-    					int index = 1;
-            	    	for(Produk produk : products) {
-            	    		productMap.put(index, produk);
-            	    		
-            	    		System.out.println(index+". "+produk.getNamaProduk());
-            	    		
-            	    		index++;
-            	    	}
-            	    	System.out.println("pilih angka produk: ");
-            	    	Scanner sc = new Scanner(System.in);
-            	    	int input = sc.nextInt();
-            	    	if(productMap.containsKey(input)) {
-            	    		Produk selectedProduct = productMap.get(input);
-            	    		
-            		    	System.out.println("produk yang anda pilih: "+selectedProduct.getNamaProduk());
-            		    	System.out.println("Masukan jumlah "+selectedProduct.getNamaProduk()+" yang ingin anda beli: ");
-            		    	
-            		    	Scanner jumlahSc = new Scanner(System.in);
-            		    	int jumlahProduk = jumlahSc.nextInt();
-            		    	
-            		    	//Cek stok produk
-            		    	
-            		    	if(selectedProduct.getStokProduk() >= jumlahProduk) {
-            		    		//Add selectedproduct to keranjang
-            		    		transaksi.addToKeranjang(selectedProduct, jumlahProduk);
-            		    		System.out.println("Produk "+selectedProduct.getNamaProduk()+" telah berhasil"
-            		    				+ " ditambahkan ke keranjang");
-            		    		
-            		    		System.out.println("Apakah ingin melihat barang lain? (Y/N)");
-            		    		
-            		    		Scanner lihatBarangSC = new Scanner(System.in);
-                		    	if(lihatBarangSC.next().equalsIgnoreCase("Y")) {
+    			boolean isShowMenu = true;
+    			while (isShowMenu) {
+    				System.out.println("---Alfamart-----");
+        			System.out.println("1. Belanja");
+        			System.out.println("2. Retur");
+        			System.out.println("3. Checkout");
+        			System.out.println("4. Keluar");
+        			Scanner menuSc = new Scanner(System.in);
+        			int menu = menuSc.nextInt();
+        			
+        			if(menu == 1) {
+        				boolean isShowProduct = true;
+        				while (isShowProduct) {
+        					int index = 1;
+                	    	for(Produk produk : products) {
+                	    		productMap.put(index, produk);
+                	    		
+                	    		System.out.println(index+". "+produk.getNamaProduk());
+                	    		
+                	    		index++;
+                	    	}
+                	    	System.out.println("pilih angka produk: ");
+                	    	Scanner sc = new Scanner(System.in);
+                	    	int input = sc.nextInt();
+                	    	if(productMap.containsKey(input)) {
+                	    		Produk selectedProduct = productMap.get(input);
+                	    		
+                		    	System.out.println("produk yang anda pilih: "+selectedProduct.getNamaProduk());
+                		    	System.out.println("Masukan jumlah "+selectedProduct.getNamaProduk()+" yang ingin anda beli: ");
+                		    	
+                		    	Scanner jumlahSc = new Scanner(System.in);
+                		    	int jumlahProduk = jumlahSc.nextInt();
+                		    	
+                		    	//Cek stok produk
+                		    	
+                		    	if(selectedProduct.getStokProduk() >= jumlahProduk) {
+                		    		//Add selectedproduct to keranjang
+                		    		transaksi.addToKeranjang(selectedProduct, jumlahProduk);
+                		    		System.out.println("Produk "+selectedProduct.getNamaProduk()+" telah berhasil"
+                		    				+ " ditambahkan ke keranjang");
+                		    		
+                		    		isShowProduct = doIsShowProduct();
+                		    		
+                		    	} else {
+                		    		System.out.println("Stok produk tidak ada");
+                		    		isShowProduct = doIsShowProduct();
                 		    		
                 		    	}
-            		    		
+                	    	} else {
+                	    		System.out.println("Produk yang anda pilih tidak ada");
+                	    		isShowProduct = doIsShowProduct();
+                	    	}
+        				}
+        			} else if(menu == 2) {
+        				 
+        			} else if(menu == 3) {
+        		    	//Checkout
+        		    		double jumlah = transaksi.getTotal_keseluruhan();
+            		    	System.out.println("Total jumlah: "+jumlah);
+            		    	
+            		    	System.out.println("Silahkan bayar dengan masukan uang pembayaran anda : ");
+            		    	Scanner bayarSc = new Scanner(System.in);
+            		    	double bayar = bayarSc.nextInt();
+            		    	
+            		    	if(bayar <= jumlah ) {
+            		    		System.out.println("Uang anda kurang");
+            		    		System.out.println("Masukan kembali ");
             		    	} else {
-            		    		System.out.println("Stok produk tidak ada");
-            		    		System.out.println("Apakah ingin melihat barang lain? (Y/N)");
+            		    		System.out.println("Belanja berhasil");
             		    		
+            		    		transaksi.strukPembelian(bayar);
+            		    		
+            		    		transactions.add(transaksi);
+            		    		
+            		    		Scanner restartSc = new Scanner(System.in);
+            	    	    	if(restartSc.next().equalsIgnoreCase("Y")) {
+            	    	    		isSystemStart = true;
+            	    	    	} else {
+            	    	    		isSystemStart = false;
+            	    	    	}
             		    	}
-            	    	} else {
-            	    		System.out.println("Produk yang anda pilih tidak ada");
-            	    	}
-    				}
-    			} else if(menu == 2) {
-    				 
-    			} else if(menu == 3) {
-    				System.out.println("Apakah anda ingin checkout? (Y/N)");
-    		    	Scanner checkoutSc = new Scanner(System.in);
-    		    	//Checkout
-    		    	if(checkoutSc.next().equalsIgnoreCase("Y")) {
-    		    		double jumlah = transaksi.getTotal_keseluruhan();
-        		    	System.out.println("Total jumlah: "+jumlah);
         		    	
-        		    	System.out.println("Silahkan bayar dengan masukan uang pembayaran anda : ");
-        		    	Scanner bayarSc = new Scanner(System.in);
-        		    	double bayar = bayarSc.nextInt();
-        		    	
-        		    	if(bayar <= jumlah ) {
-        		    		System.out.println("Uang anda kurang");
-        		    		System.out.println("Masukan kembali ");
-        		    	} else {
-        		    		System.out.println("Belanja berhasil");
-        		    		
-        		    		//transaksi.strukPembelian(Integer.valueOf(bayar));
-        		    		
-        		    		
-        		    		Scanner restartSc = new Scanner(System.in);
-        	    	    	if(restartSc.next().equalsIgnoreCase("Y")) {
-        	    	    		isSystemStart = true;
-        	    	    	} else {
-        	    	    		isSystemStart = false;
-        	    	    	}
-        		    	}
-    		    	} 
-    		    	
-    			} else if( menu == 4) {
-    				
-    			} else {
-    				System.out.println("Menu tidak adaa");
+        			} else if( menu == 4) {
+        				
+        			} else {
+        				System.out.println("Menu tidak adaa");
+        			}
     			}
     			
-    	    	
-    			
-    			while(isStartPurchase) {
-    				
-    			}
     	    } else {
     	    	System.out.println("Anda harus login terlebih dahulu");
     	    	System.out.println("Apakah ingin mencoba login kembali? (Y/N)");
@@ -226,6 +217,18 @@ public class Main {
         }
     }
     
+    
+    public static boolean doIsShowProduct() {
+    	boolean isShowProduct = true;
+    	System.out.println("Apakah ingin melihat barang lain? (Y/N)");
+		
+		Scanner lihatBarangSC = new Scanner(System.in);
+    	if(lihatBarangSC.next().equalsIgnoreCase("N")) {
+    		isShowProduct = false;
+    	}
+    	
+    	return isShowProduct;
+    }
    
 }
 

@@ -42,7 +42,7 @@ public class Transaksi extends Keranjang{
         return this.total_keseluruhan;
     }
     
-    public void strukPembelian(int uang){
+    public void strukPembelian(double uang){
         System.out.println("---Struk Transaksi---");
         System.out.println("Kode Transaksi: "+ this.kode_pembelian);
         System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
