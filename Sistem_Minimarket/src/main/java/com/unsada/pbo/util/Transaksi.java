@@ -9,10 +9,13 @@ public class Transaksi extends Keranjang{
     private String kode_pembelian;
     private Date tanggal_transaksi;
     private double total_keseluruhan;
+    private Kasir kasir;
+    private double uang;
 
-    public Transaksi(String kode_pembelian) {
+    public Transaksi(String kode_pembelian, Kasir kasir) {
         this.kode_pembelian = kode_pembelian;
         this.tanggal_transaksi = new java.util.Date();
+        this.kasir = kasir;
     }
 
     public String getKode_pembelian() {
@@ -35,6 +38,10 @@ public class Transaksi extends Keranjang{
         return tanggal_transaksi;
     }
 
+    public void setUang(double uang) {
+        this.uang = uang;
+    }
+
     public double getTotal_keseluruhan() {
         this.total_keseluruhan = 0;
         super.getKeranjang().values().forEach(item ->{
@@ -43,7 +50,7 @@ public class Transaksi extends Keranjang{
         return this.total_keseluruhan;
     }
     
-    public void strukPembelian(double uang, Kasir kasir){
+    public void strukPembelian(){
         System.out.println("---Struk Transaksi---");
         System.out.println("Kode Transaksi: "+ this.kode_pembelian);
         System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
@@ -51,9 +58,9 @@ public class Transaksi extends Keranjang{
         super.getListKeranjang();
         System.out.println("======================");
         System.out.println("Total Transaksi: " + this.total_keseluruhan);
-        System.out.println("Pembayaran: " + uang);
-        System.out.println("Kembalian: " + (uang-this.total_keseluruhan));
-        System.out.println("Kasir : "+kasir.getNamaKasir() + " ("+kasir.getNoHp()+")");
+        System.out.println("Pembayaran: " + this.uang);
+        System.out.println("Kembalian: " + (this.uang-this.total_keseluruhan));
+        System.out.println("Kasir : "+this.kasir.getNamaKasir() + " ("+this.kasir.getNoHp()+")");
     }
     
 //    public static void main(String[] args) {
