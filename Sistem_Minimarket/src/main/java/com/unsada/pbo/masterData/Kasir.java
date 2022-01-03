@@ -4,10 +4,10 @@ public class Kasir {
 	private String namaKasir;
 	private String usernameKasir;
 	private String passwordKasir;
-	private int noHp;
+	private String noHp;
 	private boolean isLogin;
 	
-	public Kasir(String namaKasir, String usernameKasir, String passwordKasir, int noHp) {
+	public Kasir(String namaKasir, String usernameKasir, String passwordKasir, String noHp) {
 		this.namaKasir = namaKasir;
 		this.usernameKasir = usernameKasir;
 		this.passwordKasir = passwordKasir;
@@ -40,11 +40,11 @@ public class Kasir {
 		this.passwordKasir = passwordKasir;
 	}
 
-	public int getNoHp() {
+	public String getNoHp() {
 		return noHp;
 	}
 
-	public void setNoHp(int noHp) {
+	public void setNoHp(String noHp) {
 		this.noHp = noHp;
 	}
 	
