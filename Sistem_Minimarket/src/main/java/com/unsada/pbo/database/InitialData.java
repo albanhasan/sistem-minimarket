@@ -11,20 +11,19 @@ public class InitialData {
 	public static List<Kasir> getInitialKasirs() {
 		List<Kasir> kasirs = new ArrayList<Kasir>();
 		
-		Kasir admin = new Kasir("admin", "admin", "admin",
-				Integer.valueOf("081280568822"));
+		Kasir admin = new Kasir("admin", "admin", "admin", "08128056882");
 		
 		Kasir sebastian = new Kasir("sebastian", "sebastian", "sebastian",
-				Integer.valueOf("0812345678"));
+				"0812345678");
 		
 		Kasir alban = new Kasir("alban", "alban", "alban",
-				Integer.valueOf("08998323213"));
+				"08998323213");
 		
 		Kasir nizar = new Kasir("nizar", "nizar", "nizar",
-				Integer.valueOf("08998333321"));
+				"08998333321");
                 
                 Kasir fiqri = new Kasir("fiqri", "fiqri", "fiqri",
-				Integer.valueOf("085884628741"));
+				"085884628741");
 		
 		kasirs.add(admin);
 		kasirs.add(sebastian);
