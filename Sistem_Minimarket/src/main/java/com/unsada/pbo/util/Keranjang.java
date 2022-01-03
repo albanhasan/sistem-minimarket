@@ -31,14 +31,29 @@ public class Keranjang {
                     item.setJumlah_produk(temp);
                     item.setTotal_harga(temp * produk.getHargaProduk());
                 }
+                System.out.println(produk.getNamaProduk()+" berhasil dikembalikan");
             }
             else{
-                System.out.println("jumlah "+ produk.getNamaProduk() +" di dalam keranjang hanya "+keranjang.get(produk));
+                System.out.println("jumlah "+ produk.getNamaProduk() +" di dalam keranjang hanya "+item.getJumlah_produk());
             }
         }
     }
 
-    public Map<Produk, Penjualan> getKeranjang(){
+    public Map<Integer, Produk> getListKeranjang(){
+        Map<Integer, Produk> cartMap = new HashMap<>();
+        int indexKeranjang = 1;
+        for(Map.Entry<Produk, Penjualan> entry : this.keranjang.entrySet()){
+            Produk key = entry.getKey();
+            Penjualan value = entry.getValue();
+            System.out.println(indexKeranjang+". "+key.getNamaProduk()+" quantity: "+value.getJumlah_produk()+" Rp."+value.getTotal_harga());
+            cartMap.put(indexKeranjang++, key);
+        }
+        
+        return cartMap;
+    }
+
+    public Map<Produk, Penjualan> getKeranjang() {
         return this.keranjang;
     }
+    
 }

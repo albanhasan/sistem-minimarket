@@ -46,14 +46,10 @@ public class Transaksi extends Keranjang{
         System.out.println("---Struk Transaksi---");
         System.out.println("Kode Transaksi: "+ this.kode_pembelian);
         System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
-        super.getKeranjang().entrySet().forEach(entry -> {
-            Produk produk = entry.getKey();
-            Penjualan item = entry.getValue();
-            System.out.println(produk.getNamaProduk() + " x"+ item.getJumlah_produk()+" Rp."+item.getTotal_harga());
-        });
+        super.getListKeranjang();
         System.out.println("Total Transaksi: " + this.total_keseluruhan);
         System.out.println("Pembayaran: " + uang);
-        System.out.println("Kembalian: " + (this.total_keseluruhan-uang));
+        System.out.println("Kembalian: " + (uang-this.total_keseluruhan));
     }
     
 //    public static void main(String[] args) {

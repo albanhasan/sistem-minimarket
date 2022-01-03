@@ -17,6 +17,7 @@ import com.unsada.pbo.database.InitialData;
 import com.unsada.pbo.masterData.Kasir;
 import com.unsada.pbo.masterData.Minimarket;
 import com.unsada.pbo.masterData.Produk;
+import com.unsada.pbo.util.Penjualan;
 import com.unsada.pbo.util.Transaksi;
 
 /**
@@ -101,7 +102,30 @@ public class Main {
                 	    	}
         				}
         			} else if(menu == 2) {
-        				 
+                                        boolean isShowRetur = true;
+                                        while(isShowRetur){
+                                            Map<Integer, Produk> cartMap = transaksi.getListKeranjang();
+                                            if(cartMap.size()>0){
+                                                System.out.println("pilih angka produk: ");
+                                                Scanner sc = new Scanner(System.in);
+                                                int input = sc.nextInt();
+                                                if(cartMap.containsKey(input)){
+                                                    Produk selectedProduct = cartMap.get(input);
+                                                    System.out.println("produk yang anda pilih: "+selectedProduct.getNamaProduk());
+                                                    System.out.println("Masukan jumlah "+selectedProduct.getNamaProduk()+" yang ingin anda retur: ");
+
+                                                    Scanner jumlahSc = new Scanner(System.in);
+                                                    int jumlahProduk = jumlahSc.nextInt();
+                                                    transaksi.removeFromKeranjang(selectedProduct, jumlahProduk);
+                                                }
+                                                isShowRetur = doIsShowRetur();
+                                            }
+                                            else{
+                                                System.out.println("Belum ada produk di keranjang");
+                                                isShowRetur = false;
+                                            }
+                                        }
+        				
         			} else if(menu == 3) {
         		    	//Checkout
         		    		double jumlah = transaksi.getTotal_keseluruhan();
@@ -130,7 +154,9 @@ public class Main {
             		    	}
         		    	
         			} else if( menu == 4) {
-        				
+                                        System.out.println("Keluar dari sistem");
+                                        System.out.println("Sampai jumpa");
+                                        isShowMenu = false;
         			} else {
         				System.out.println("Menu tidak adaa");
         			}
@@ -228,6 +254,17 @@ public class Main {
     	}
     	
     	return isShowProduct;
+    }
+    
+    public static boolean doIsShowRetur() {
+    	boolean isShowRetur = true;
+    	System.out.println("Apakah ingin mengembalikan barang lain? (Y/N)");	
+        Scanner lihatBarangSC = new Scanner(System.in);
+    	if(lihatBarangSC.next().equalsIgnoreCase("N")) {
+            isShowRetur = false;
+    	}
+    	
+    	return isShowRetur;
     }
    
 }
