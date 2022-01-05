@@ -49,22 +49,23 @@ public class Transaksi extends Keranjang{
         });
         return this.total_keseluruhan;
     }
+
+    public Kasir getKasir() {
+        return kasir;
+    }
     
-    public void printData(Kasir kasir) {
-    	System.out.println("---Struk Transaksi---");
-        System.out.println("Kode Transaksi: "+ this.kode_pembelian);
-        System.out.println("Tanggal Transaksi: "+ this.tanggal_transaksi);
-        System.out.println("======================");
-        super.printData();
-        System.out.println("======================");
-        System.out.println("Total Transaksi: " + this.total_keseluruhan);
-        System.out.println("Pembayaran: " + this.uang);
-        System.out.println("Kembalian: " + (this.uang-this.total_keseluruhan));
-        System.out.println("Kasir : "+this.kasir.getNamaKasir() + " ("+this.kasir.getNoHp()+")");
+    public String printData(Kasir kasir) {
+        String output = "";
+    	output+="----------Struk Transaksi----------\n";
+        output+="Kode Transaksi: "+ this.kode_pembelian+"\n";
+        output+="Tanggal Transaksi: "+ this.tanggal_transaksi+"\n";
+        output+="======================\n";
+        output+=super.printData();
+        output+="======================\n";
+        output+="Total Transaksi: Rp." + this.total_keseluruhan+"\n";
+        output+="Pembayaran: Rp." + this.uang+"\n";
+        output+="Kembalian: Rp." + (this.uang-this.total_keseluruhan)+"\n";
+        output+="Kasir : "+this.kasir.getNamaKasir() + " ("+this.kasir.getNoHp()+")\n";
+        return output;
    }
-    
-//    public static void main(String[] args) {
-//        Transaksi t = new Transaksi("1");
-//        System.out.println(t.getTanggal_transaksi());
-//    }
 }
