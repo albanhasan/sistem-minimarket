@@ -6,31 +6,31 @@ import java.util.List;
 import com.unsada.pbo.util.Transaksi;
 
 public class Minimarket {
-	public List<Kasir> kasirs;
-	public List<Produk> produtcs;
+	public List<Kasir> chasiers;
+	public List<Produk> products;
 	public List<Transaksi> transactions;
 	
-	public Minimarket(List<Kasir> kasirs, List<Produk> produtcs, List<Transaksi> transactions) {
+	public Minimarket(List<Kasir> chasiers, List<Produk> products, List<Transaksi> transactions) {
 		this.transactions = transactions;
-		this.kasirs = kasirs;
-		this.produtcs = produtcs;
+		this.chasiers = chasiers;
+		this.products = products;
 				
 	}
 
 	public List<Kasir> getKasirs() {
-		return kasirs;
+		return chasiers;
 	}
 
-	public void setKasirs(List<Kasir> kasirs) {
-		this.kasirs = kasirs;
+	public void setKasirs(List<Kasir> chasiers) {
+		this.chasiers = chasiers;
 	}
 
-	public List<Produk> getProdutcs() {
-		return produtcs;
+	public List<Produk> getProducts() {
+		return products;
 	}
 
-	public void setProdutcs(List<Produk> produtcs) {
-		this.produtcs = produtcs;
+	public void setProducts(List<Produk> produtcs) {
+		this.products = produtcs;
 	}
 
 	public List<Transaksi> getTransactions() {
@@ -41,6 +41,15 @@ public class Minimarket {
 		this.transactions = transactions;
 	}
 	
-	
+	public void addProduct(String namaProduk, int stokProduk, double hargaProduk){
+            long idLastProduct = this.products.get(this.products.size()-1).getId_produk();
+            long id = 1+idLastProduct;
+            Produk produk = new Produk(id, namaProduk, stokProduk, hargaProduk);
+            this.products.add(produk);
+        }
+        
+        public void removeProduct(Produk produk){
+            this.products.remove(this.products.indexOf(produk));
+        }
 	
 }
