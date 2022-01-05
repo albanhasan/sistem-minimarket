@@ -10,7 +10,7 @@ public class Penjualan {
     }
 
     public int getJumlah_produk() {
-        return jumlah_produk;
+        return this.jumlah_produk;
     }
 
     public void setJumlah_produk(int jumlah_produk) {
