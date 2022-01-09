@@ -8,7 +8,7 @@ import com.unsada.pbo.masterData.Produk;
 
 public class InitialData {
 	
-	public static List<Kasir> getInitialKasirs() {
+	public static List<Kasir> getInitialCashiers() {
 		List<Kasir> kasirs = new ArrayList<Kasir>();
 		
 		Kasir admin = new Kasir("admin", "admin", "admin", "08128056882");

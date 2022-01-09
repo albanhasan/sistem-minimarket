@@ -6,23 +6,23 @@ import java.util.List;
 import com.unsada.pbo.util.Transaksi;
 
 public class Minimarket {
-	public List<Kasir> chasiers;
+	public List<Kasir> cashiers;
 	public List<Produk> products;
 	public List<Transaksi> transactions;
 	
 	public Minimarket(List<Kasir> chasiers, List<Produk> products, List<Transaksi> transactions) {
 		this.transactions = transactions;
-		this.chasiers = chasiers;
+		this.cashiers = chasiers;
 		this.products = products;
 				
 	}
 
-	public List<Kasir> getKasirs() {
-		return chasiers;
+	public List<Kasir> getCashiers() {
+		return cashiers;
 	}
 
-	public void setKasirs(List<Kasir> chasiers) {
-		this.chasiers = chasiers;
+	public void setCashiers(List<Kasir> chasiers) {
+		this.cashiers = chasiers;
 	}
 
 	public List<Produk> getProducts() {
