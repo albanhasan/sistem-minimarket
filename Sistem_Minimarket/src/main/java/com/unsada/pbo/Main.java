@@ -36,7 +36,6 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         
-        
         initComponents();
         setTitle("Easy SHopping in Minimarket");
         minimarket = new Minimarket(InitialData.getInitialCashiers(),
@@ -120,7 +119,8 @@ public class Main extends javax.swing.JFrame {
         hapusProdukButton = new javax.swing.JButton();
         tambahProdukBaruButton = new javax.swing.JButton();
         mainMenuCardContainer = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        firstPanelMainMenu = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         transaksiPanel = new javax.swing.JPanel();
         daftarTransaskiLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -155,7 +155,7 @@ public class Main extends javax.swing.JFrame {
         returProdukButton = new javax.swing.JButton();
         lihatKeranjangButton = new javax.swing.JButton();
         checkoutButton = new javax.swing.JButton();
-        kembaliButton = new javax.swing.JButton();
+        batalButton = new javax.swing.JButton();
         belanjaCardContainer = new javax.swing.JPanel();
         tambahProdukPanel = new javax.swing.JPanel();
         produkComboBox = new javax.swing.JComboBox<>();
@@ -188,6 +188,8 @@ public class Main extends javax.swing.JFrame {
         rpLabel = new javax.swing.JLabel();
         rpLabel1 = new javax.swing.JLabel();
         bayarButton = new javax.swing.JButton();
+        firstPanelBelanja = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -209,10 +211,8 @@ public class Main extends javax.swing.JFrame {
         passLabel.setText("Password");
 
         unameTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        unameTextField.setText("admin");
 
         passField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        passField.setText("admin");
 
         loginButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         loginButton.setText("Login");
@@ -233,7 +233,7 @@ public class Main extends javax.swing.JFrame {
         loginPanelLayout.setHorizontalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(232, 232, 232)
+                .addGap(313, 313, 313)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(153, 153, 153)
@@ -253,12 +253,12 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passStatus)
                             .addComponent(unameStatus))))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(141, 141, 141)
                 .addComponent(loginLabel)
                 .addGap(25, 25, 25)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -272,7 +272,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(passStatus))
                 .addGap(31, 31, 31)
                 .addComponent(loginButton)
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         mainContainer.add(loginPanel, "loginCard");
@@ -337,14 +337,14 @@ public class Main extends javax.swing.JFrame {
         mainMenuPanelLayout.setHorizontalGroup(
             mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(93, 93, 93)
                 .addComponent(mainMenuLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(mainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(belanjaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(showTransactionsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(showTransactionsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                     .addComponent(restockButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(hapusProdukButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -373,18 +373,27 @@ public class Main extends javax.swing.JFrame {
 
         mainMenuCardContainer.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("Easy Shopping in Minimarket");
+
+        javax.swing.GroupLayout firstPanelMainMenuLayout = new javax.swing.GroupLayout(firstPanelMainMenu);
+        firstPanelMainMenu.setLayout(firstPanelMainMenuLayout);
+        firstPanelMainMenuLayout.setHorizontalGroup(
+            firstPanelMainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstPanelMainMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+        firstPanelMainMenuLayout.setVerticalGroup(
+            firstPanelMainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstPanelMainMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(525, Short.MAX_VALUE))
         );
 
-        mainMenuCardContainer.add(jPanel1, "card4");
+        mainMenuCardContainer.add(firstPanelMainMenu, "firstPanelMainMenuCard");
 
         daftarTransaskiLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         daftarTransaskiLabel.setText("Daftar Transaksi");
@@ -405,7 +414,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(transaksiPanelLayout.createSequentialGroup()
                         .addComponent(daftarTransaskiLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE))
                 .addContainerGap())
         );
         transaksiPanelLayout.setVerticalGroup(
@@ -500,7 +509,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(restockJumlahTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(restockProductButton)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainMenuCardContainer.add(restockPanel, "restockCard");
@@ -552,7 +561,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(namaProdukBaruTextField)
                             .addComponent(stokProdukBaruTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tambahProdukBaruPanelLayout.setVerticalGroup(
             tambahProdukBaruPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,7 +582,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(hargaProdukBaruTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addProductButton)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainMenuCardContainer.add(tambahProdukBaruPanel, "tambahProdukBaruCard");
@@ -617,7 +626,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(hapusProdukPanelLayout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(removeProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         hapusProdukPanelLayout.setVerticalGroup(
             hapusProdukPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -630,7 +639,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(hapusProdukComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(removeProductButton)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainMenuCardContainer.add(hapusProdukPanel, "hapusProdukCard");
@@ -641,7 +650,7 @@ public class Main extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addComponent(mainMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mainMenuCardContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -697,11 +706,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        kembaliButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        kembaliButton.setText("Keluar");
-        kembaliButton.addActionListener(new java.awt.event.ActionListener() {
+        batalButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        batalButton.setText("Batal");
+        batalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kembaliButtonActionPerformed(evt);
+                batalButtonActionPerformed(evt);
             }
         });
 
@@ -715,13 +724,13 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(returProdukButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lihatKeranjangButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkoutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tambahProdukButton, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                    .addComponent(kembaliButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tambahProdukButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(batalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(belanjaMenuPanelLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, belanjaMenuPanelLayout.createSequentialGroup()
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addComponent(belanjaLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(110, 110, 110))
         );
         belanjaMenuPanelLayout.setVerticalGroup(
             belanjaMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -737,7 +746,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(checkoutButton)
                 .addGap(18, 18, 18)
-                .addComponent(kembaliButton)
+                .addComponent(batalButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -918,7 +927,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(lihatKeranjangPanelLayout.createSequentialGroup()
                         .addComponent(isiKeranjangLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE))
                 .addContainerGap())
         );
         lihatKeranjangPanelLayout.setVerticalGroup(
@@ -954,7 +963,6 @@ public class Main extends javax.swing.JFrame {
         totalHargaLabel.setText("0");
 
         checkoutTextField.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        checkoutTextField.setText("0");
 
         rpLabel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         rpLabel.setText("Rp.");
@@ -999,7 +1007,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(111, 111, 111)
                         .addComponent(bayarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(checkoutLabel))
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
         checkoutPanelLayout.setVerticalGroup(
             checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1025,13 +1033,35 @@ public class Main extends javax.swing.JFrame {
 
         belanjaCardContainer.add(checkoutPanel, "checkoutCard");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setText("Easy Shopping in Minimarket");
+
+        javax.swing.GroupLayout firstPanelBelanjaLayout = new javax.swing.GroupLayout(firstPanelBelanja);
+        firstPanelBelanja.setLayout(firstPanelBelanjaLayout);
+        firstPanelBelanjaLayout.setHorizontalGroup(
+            firstPanelBelanjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstPanelBelanjaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(185, Short.MAX_VALUE))
+        );
+        firstPanelBelanjaLayout.setVerticalGroup(
+            firstPanelBelanjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(firstPanelBelanjaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(525, Short.MAX_VALUE))
+        );
+
+        belanjaCardContainer.add(firstPanelBelanja, "firstPanelBelanjaCard");
+
         javax.swing.GroupLayout belanjaPanelLayout = new javax.swing.GroupLayout(belanjaPanel);
         belanjaPanel.setLayout(belanjaPanelLayout);
         belanjaPanelLayout.setHorizontalGroup(
             belanjaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(belanjaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(belanjaMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(belanjaMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(belanjaCardContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1103,6 +1133,7 @@ public class Main extends javax.swing.JFrame {
         else{
             //change card
             cardLayout.show(mainContainer, "mainMenuCard");
+            mainMenuCardLayout.show(mainMenuCardContainer, "firstPanelMainMenuCard");
         }
         restockComboBox.setModel(new DefaultComboBoxModel(listProduk));
         hapusProdukComboBox.setModel(new DefaultComboBoxModel(listProduk));
@@ -1112,71 +1143,85 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yy-HH-mm-ss");
         this.transaksi = new Transaksi(sdf.format(new Date()), this.chasier);
-        produkComboBox.setModel(new DefaultComboBoxModel(this.listProduk));
-        returComboBox.setModel(new DefaultComboBoxModel(listKeranjang(this.transaksi)));
-        this.setTableKeranjang();
-        totalHargaLabel.setText("0");
-        checkoutTextField.setText("0");
-        returJumlahTextField.setText("0");
-        produkJumlahTextField.setText("0");
-        returJumlahLabel.setText("0");
         cardLayout.show(mainContainer, "belanjaCard");
-        
+        belanjaCardLayout.show(belanjaCardContainer,"firstPanelBelanjaCard");
     }//GEN-LAST:event_belanjaButtonActionPerformed
 
     private void showTransactionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTransactionsButtonActionPerformed
         transaksiTextArea.setText("");
+        boolean thereIsNoTransactions = true;
         for(Transaksi transaksi: minimarket.getTransactions()){
             transaksiTextArea.append("================================================\n");
             transaksiTextArea.append(transaksi.printData(transaksi.getKasir()));
             transaksiTextArea.append("================================================\n");
+            thereIsNoTransactions = false;
         }
+        if(thereIsNoTransactions) transaksiTextArea.append("Belum ada transaksi");
         mainMenuCardLayout.show(mainMenuCardContainer, "transaksiCard");
     }//GEN-LAST:event_showTransactionsButtonActionPerformed
 
     private void tambahProdukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahProdukButtonActionPerformed
         // TODO add your handling code here:
         produkComboBox.setModel(new DefaultComboBoxModel(this.listProduk));
-        produkJumlahTextField.setText("0");
+        produkJumlahTextField.setText("");
         belanjaCardLayout.show(belanjaCardContainer,"tambahProdukCard");
     }//GEN-LAST:event_tambahProdukButtonActionPerformed
 
     private void returProdukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returProdukButtonActionPerformed
         // TODO add your handling code here:
-        returComboBox.setModel(new DefaultComboBoxModel(listKeranjang(this.transaksi)));
-        if(returComboBox.getSelectedItem()!=null){
+        if(this.transaksi.getKeranjang().size()>0){
+            returComboBox.setModel(new DefaultComboBoxModel(listKeranjang(this.transaksi)));
             int jumlah = transaksi.getKeranjang().get((Produk)returComboBox.getSelectedItem()).getJumlah_produk();
             returJumlahLabel.setText(""+jumlah);
+            returJumlahTextField.setText("");
+            belanjaCardLayout.show(belanjaCardContainer,"returProdukCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada Produk dalam keranjang");
         }
-        returJumlahTextField.setText("0");
-        belanjaCardLayout.show(belanjaCardContainer,"returProdukCard");
+        
     }//GEN-LAST:event_returProdukButtonActionPerformed
 
     private void restockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restockButtonActionPerformed
-        restockComboBox.setModel(new DefaultComboBoxModel(listProduk));
-        restockJumlahLabel.setText(""+listProduk[restockComboBox.getSelectedIndex()].getStokProduk());
-        mainMenuCardLayout.show(mainMenuCardContainer, "restockCard");
+        if(listProduk.length > 0){
+            restockComboBox.setModel(new DefaultComboBoxModel(listProduk));
+            restockJumlahLabel.setText(""+listProduk[restockComboBox.getSelectedIndex()].getStokProduk());
+            restockJumlahTextField.setText("");
+            mainMenuCardLayout.show(mainMenuCardContainer, "restockCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada produk");
+            mainMenuCardLayout.show(mainMenuCardContainer, "tambahProdukBaruCard");
+        }
     }//GEN-LAST:event_restockButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
         this.chasier = null;
+        unameTextField.setText("");
+        passField.setText("");
         cardLayout.show(mainContainer, "loginCard");
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void lihatKeranjangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatKeranjangButtonActionPerformed
         // TODO add your handling code here
-        this.setTableKeranjang();
-        belanjaCardLayout.show(belanjaCardContainer,"lihatKeranjangCard");
+        if(this.transaksi.getKeranjang().size()>0){
+            this.setTableKeranjang();
+            belanjaCardLayout.show(belanjaCardContainer,"lihatKeranjangCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada Produk dalam keranjang");
+        }
     }//GEN-LAST:event_lihatKeranjangButtonActionPerformed
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
         // TODO add your handling code here:
-        totalHargaLabel.setText(""+this.transaksi.getTotal_keseluruhan());
-        belanjaCardLayout.show(belanjaCardContainer,"checkoutCard");
+        if(this.transaksi.getKeranjang().size()>0){
+            totalHargaLabel.setText(""+this.transaksi.getTotal_keseluruhan());
+            belanjaCardLayout.show(belanjaCardContainer,"checkoutCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada Produk dalam keranjang");
+        }
     }//GEN-LAST:event_checkoutButtonActionPerformed
 
-    private void kembaliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliButtonActionPerformed
+    private void batalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalButtonActionPerformed
         // TODO add your handling code here:
         if(this.transaksi.getKeranjang().size()>0){
             for(Map.Entry<Produk, Penjualan> entry : this.transaksi.getKeranjang().entrySet()){
@@ -1185,49 +1230,49 @@ public class Main extends javax.swing.JFrame {
                 this.transaksi.removeFromKeranjang(key, value.getJumlah_produk());
             }
         }
-        transaksiTextArea.setText("");
-        for(Transaksi transaksi: minimarket.getTransactions()){
-            transaksiTextArea.append("================================================\n");
-            transaksiTextArea.append(transaksi.printData(transaksi.getKasir()));
-            transaksiTextArea.append("================================================\n");
-        }
         cardLayout.show(mainContainer, "mainMenuCard");
-    }//GEN-LAST:event_kembaliButtonActionPerformed
+        mainMenuCardLayout.show(mainMenuCardContainer, "firstPanelMainMenuCard");
+    }//GEN-LAST:event_batalButtonActionPerformed
 
     private void tambahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahButtonActionPerformed
         // TODO add your handling code here:
-        Produk selectedProduct = (Produk) produkComboBox.getSelectedItem();
-        int jumlahProduk = Integer.parseInt(produkJumlahTextField.getText());
-        if(selectedProduct.getStokProduk() >= jumlahProduk) {
-            //Add selectedproduct to keranjang
-            transaksi.addToKeranjang(selectedProduct, jumlahProduk);
-            produkComboBox.setModel(new DefaultComboBoxModel(this.listProduk));
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, selectedProduct.getNamaProduk()+" sebanyak "+jumlahProduk+" berhasil dimasukkan ke dalam keranjang");
-        }else{
-            JOptionPane.showMessageDialog(msgbox, "Stok untuk "+selectedProduct.getNamaProduk()+" kurang");
+        try {
+            Produk selectedProduct = (Produk) produkComboBox.getSelectedItem();
+            int jumlahProduk = Integer.parseInt(produkJumlahTextField.getText());
+            if(selectedProduct.getStokProduk() >= jumlahProduk) {
+                //Add selectedproduct to keranjang
+                transaksi.addToKeranjang(selectedProduct, jumlahProduk);
+                JOptionPane.showMessageDialog(msgbox, selectedProduct.getNamaProduk()+" sebanyak "+jumlahProduk+" berhasil dimasukkan ke dalam keranjang");
+                produkComboBox.setModel(new DefaultComboBoxModel(this.listProduk));
+            }else{
+                JOptionPane.showMessageDialog(msgbox, "Stok untuk "+selectedProduct.getNamaProduk()+" kurang");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(msgbox, "Input tidak valid");
         }
-        produkJumlahTextField.setText("0"); 	
+        produkJumlahTextField.setText(""); 	
     }//GEN-LAST:event_tambahButtonActionPerformed
 
     private void returButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returButtonActionPerformed
-        // TODO add your handling code here:
-        Produk selectedProduct = (Produk) returComboBox.getSelectedItem();
-        int jumlahProduk = Integer.parseInt(returJumlahTextField.getText());
-        if(transaksi.getKeranjang().get(selectedProduct).getJumlah_produk()<jumlahProduk){
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, "Jumlah "+selectedProduct.getNamaProduk()+" dalam keranjang kurang");
-        }else{
-            transaksi.removeFromKeranjang(selectedProduct, jumlahProduk);
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, selectedProduct.getNamaProduk()+" sebanyak "+jumlahProduk+" berhasil dikembalikan");
+        try {
+            Produk selectedProduct = (Produk) returComboBox.getSelectedItem();
+            int jumlahProduk = Integer.parseInt(returJumlahTextField.getText());
+            if(transaksi.getKeranjang().get(selectedProduct).getJumlah_produk()<jumlahProduk){
+                JOptionPane.showMessageDialog(msgbox, "Jumlah "+selectedProduct.getNamaProduk()+" dalam keranjang kurang");
+            }else{
+                transaksi.removeFromKeranjang(selectedProduct, jumlahProduk);
+                JOptionPane.showMessageDialog(msgbox, selectedProduct.getNamaProduk()+" sebanyak "+jumlahProduk+" berhasil dikembalikan");
+                int jumlah = transaksi.getKeranjang().get((Produk)returComboBox.getSelectedItem()).getJumlah_produk();
+                returJumlahLabel.setText(""+jumlah);
+            }
+            returComboBox.setModel(new DefaultComboBoxModel(listKeranjang(this.transaksi)));
+            if(this.transaksi.getKeranjang().size()==0){
+                belanjaCardLayout.show(belanjaCardContainer, "firstPanelBelanjaCard");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(msgbox, "Input tidak valid");
         }
-        returComboBox.setModel(new DefaultComboBoxModel(listKeranjang(this.transaksi)));
-        if(returComboBox.getSelectedItem()!=null){
-            int jumlah = transaksi.getKeranjang().get((Produk)returComboBox.getSelectedItem()).getJumlah_produk();
-            returJumlahLabel.setText(""+jumlah);
-        }
-        returJumlahTextField.setText("0");
+        returJumlahTextField.setText("");
     }//GEN-LAST:event_returButtonActionPerformed
 
     private void returComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_returComboBoxItemStateChanged
@@ -1237,34 +1282,22 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_returComboBoxItemStateChanged
 
     private void bayarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarButtonActionPerformed
-        // TODO add your handling code here:
-        double bayar = Double.parseDouble(checkoutTextField.getText());
-        if (this.transaksi.getKeranjang().size()==0) {
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, "Keranjang masih kosong");
-        }else if(bayar >= this.transaksi.getTotal_keseluruhan()){
-            this.transaksi.setUang(bayar);
-            this.transaksi.printData(chasier);
-            this.minimarket.getTransactions().add(this.transaksi);
-            this.msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, this.transaksi.printData(chasier));
-            totalHargaLabel.setText("0");
-            checkoutTextField.setText("0");
-            returJumlahTextField.setText("0");
-            produkJumlahTextField.setText("0");
-//            keranjangTextArea.setText("");
-            transaksiTextArea.setText("");
-            for(Transaksi transaksi: minimarket.getTransactions()){
-                transaksiTextArea.append("================================================\n");
-                transaksiTextArea.append(transaksi.printData(transaksi.getKasir()));
-                transaksiTextArea.append("================================================\n");
+        try {
+            double bayar = Double.parseDouble(checkoutTextField.getText());
+            if(bayar >= this.transaksi.getTotal_keseluruhan()){
+                this.transaksi.setUang(bayar);
+                this.transaksi.printData(chasier);
+                this.minimarket.getTransactions().add(this.transaksi); 
+                JOptionPane.showMessageDialog(msgbox, this.transaksi.printData(chasier));
+                cardLayout.show(mainContainer, "mainMenuCard");
+                mainMenuCardLayout.show(mainMenuCardContainer, "firstPanelMainMenuCard");
+            }else{
+                JOptionPane.showMessageDialog(msgbox, "Uang Anda masih kurang!");
             }
-            cardLayout.show(mainContainer, "mainMenuCard");
-        }else{
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, "Uang Anda masih kurang!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(msgbox, "Input tidak valid");
         }
-        checkoutTextField.setText("0");
+        checkoutTextField.setText("");
     }//GEN-LAST:event_bayarButtonActionPerformed
 
     private void restockComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_restockComboBoxItemStateChanged
@@ -1273,20 +1306,28 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_restockComboBoxItemStateChanged
 
     private void restockProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restockProductButtonActionPerformed
-        // TODO add your handling code here:
-        int stokTambahan = Integer.parseInt(restockJumlahTextField.getText());
-        Produk selectedProduct = listProduk[restockComboBox.getSelectedIndex()];
-        selectedProduct.setStokProduk(selectedProduct.getStokProduk()+ stokTambahan);
-        msgbox =new JFrame();  
-        JOptionPane.showMessageDialog(msgbox, "Stok "+selectedProduct.getNamaProduk()+" sebanyak "+stokTambahan+" berhasil ditambahkan");
-        restockJumlahLabel.setText(""+selectedProduct.getStokProduk());
-        restockJumlahTextField.setText("0");
+        try {
+            int stokTambahan = Integer.parseInt(restockJumlahTextField.getText());
+            Produk selectedProduct = listProduk[restockComboBox.getSelectedIndex()];
+            selectedProduct.setStokProduk(selectedProduct.getStokProduk()+ stokTambahan); 
+            JOptionPane.showMessageDialog(msgbox, "Stok "+selectedProduct.getNamaProduk()+" sebanyak "+stokTambahan+" berhasil ditambahkan");
+            restockJumlahLabel.setText(""+selectedProduct.getStokProduk());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(msgbox, "Input tidak valid");
+        }
+        restockJumlahTextField.setText("");
     }//GEN-LAST:event_restockProductButtonActionPerformed
 
     private void hapusProdukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusProdukButtonActionPerformed
         // TODO add your handling code here:
-        hapusProdukComboBox.setModel(new DefaultComboBoxModel(listProduk));
-        mainMenuCardLayout.show(mainMenuCardContainer, "hapusProdukCard");
+        if(listProduk.length > 0){
+            hapusProdukComboBox.setModel(new DefaultComboBoxModel(listProduk));
+            mainMenuCardLayout.show(mainMenuCardContainer, "hapusProdukCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada produk");
+            mainMenuCardLayout.show(mainMenuCardContainer, "tambahProdukBaruCard");
+        }
+        
     }//GEN-LAST:event_hapusProdukButtonActionPerformed
 
     private void tambahProdukBaruButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahProdukBaruButtonActionPerformed
@@ -1298,24 +1339,25 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tambahProdukBaruButtonActionPerformed
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
-        // TODO add your handling code here:
-        String namaProduk = namaProdukBaruTextField.getText();
-        int stokProduk = Integer.parseInt(stokProdukBaruTextField.getText());
-        double hargaProduk = Double.parseDouble(hargaProdukBaruTextField.getText());
-        boolean uniqueProduct = true;
-        for(Produk produk: this.listProduk){
-            if(namaProduk.toLowerCase().equals(produk.getNamaProduk().toLowerCase())){
-                uniqueProduct = false;
+        try {
+            String namaProduk = namaProdukBaruTextField.getText();
+            int stokProduk = Integer.parseInt(stokProdukBaruTextField.getText());
+            double hargaProduk = Double.parseDouble(hargaProdukBaruTextField.getText());
+            boolean uniqueProduct = true;
+            for(Produk produk: this.listProduk){
+                if(namaProduk.toLowerCase().equals(produk.getNamaProduk().toLowerCase())){
+                    uniqueProduct = false;
+                }
             }
-        }
-        if(uniqueProduct){
-            minimarket.addProduct(namaProduk, stokProduk, hargaProduk);
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, "Produk berhasil ditambahkan");
-            this.listProduk = minimarket.getProducts().toArray(new Produk[this.minimarket.getProducts().size()]);
-        }else{
-            msgbox =new JFrame();  
-            JOptionPane.showMessageDialog(msgbox, "Produk telah tersedia");
+            if(uniqueProduct){
+                minimarket.addProduct(namaProduk, stokProduk, hargaProduk);
+                JOptionPane.showMessageDialog(msgbox, "Produk berhasil ditambahkan");
+                this.listProduk = minimarket.getProducts().toArray(new Produk[this.minimarket.getProducts().size()]);
+            }else{
+                JOptionPane.showMessageDialog(msgbox, "Produk telah tersedia");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(msgbox, "Input tidak valid");
         }
         namaProdukBaruTextField.setText("");
         stokProdukBaruTextField.setText("");
@@ -1328,13 +1370,15 @@ public class Main extends javax.swing.JFrame {
 
     private void removeProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeProductButtonActionPerformed
         // TODO add your handling code here:
-        
         Produk produk = (Produk) hapusProdukComboBox.getSelectedItem();
         minimarket.removeProduct(produk);
-        msgbox =new JFrame();  
         JOptionPane.showMessageDialog(msgbox, "Produk berhasil dihapus");
         this.listProduk = minimarket.getProducts().toArray(new Produk[this.minimarket.getProducts().size()]);
-        hapusProdukComboBox.setModel(new DefaultComboBoxModel(listProduk));
+        if(listProduk.length > 0){
+            hapusProdukComboBox.setModel(new DefaultComboBoxModel(listProduk));    
+        }else{
+            mainMenuCardLayout.show(mainMenuCardContainer, "firstPanelMainMenuCard");
+        }
     }//GEN-LAST:event_removeProductButtonActionPerformed
     
     public Produk[] listKeranjang(Transaksi transaksi){
@@ -1396,6 +1440,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addProductButton;
+    private javax.swing.JButton batalButton;
     private javax.swing.JButton bayarButton;
     private javax.swing.JButton belanjaButton;
     private javax.swing.JPanel belanjaCardContainer;
@@ -1407,6 +1452,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel checkoutPanel;
     private javax.swing.JTextField checkoutTextField;
     private javax.swing.JLabel daftarTransaskiLabel;
+    private javax.swing.JPanel firstPanelBelanja;
+    private javax.swing.JPanel firstPanelMainMenu;
     private javax.swing.JButton hapusProdukButton;
     private javax.swing.JComboBox<String> hapusProdukComboBox;
     private javax.swing.JLabel hapusProdukLabel;
@@ -1414,16 +1461,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel hargaProdukBaruLabel;
     private javax.swing.JTextField hargaProdukBaruTextField;
     private javax.swing.JLabel isiKeranjangLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jumlahRestockLabel;
     private javax.swing.JLabel jumlahReturKeranjangLabel;
     private javax.swing.JLabel jumlahTambahKeranjangLabel;
-    private javax.swing.JButton kembaliButton;
     private javax.swing.JTable keranjangTable;
     private javax.swing.JButton lihatKeranjangButton;
     private javax.swing.JPanel lihatKeranjangPanel;
