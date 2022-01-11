@@ -199,6 +199,7 @@ public class Main extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 102, 102));
         setMinimumSize(new java.awt.Dimension(850, 600));
         setName("mainFrame"); // NOI18N
+        setResizable(false);
         setSize(new java.awt.Dimension(850, 600));
 
         mainContainer.setBackground(new java.awt.Color(102, 102, 102));
@@ -1145,10 +1146,16 @@ public class Main extends javax.swing.JFrame {
 
     private void belanjaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_belanjaButtonActionPerformed
         // TODO add your handling code here:
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yy-HH-mm-ss");
+        if(listProduk.length > 0){
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yy-HH-mm-ss");
         this.transaksi = new Transaksi(sdf.format(new Date()), this.chasier);
         cardLayout.show(mainContainer, "belanjaCard");
         belanjaCardLayout.show(belanjaCardContainer,"firstPanelBelanjaCard");
+        }else{
+            JOptionPane.showMessageDialog(msgbox, "Tidak ada produk");
+            mainMenuCardLayout.show(mainMenuCardContainer, "tambahProdukBaruCard");
+        }
+        
     }//GEN-LAST:event_belanjaButtonActionPerformed
 
     private void showTransactionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTransactionsButtonActionPerformed
