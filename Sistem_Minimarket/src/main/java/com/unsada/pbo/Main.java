@@ -52,7 +52,8 @@ public class Main extends javax.swing.JFrame {
             @Override
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if(value instanceof Produk produk){
+                if(value instanceof Produk ){
+                    Produk produk = Produk.class.cast(value);
                     setText(produk.getNamaProduk()+ " (Rp."+produk.getHargaProduk()+") | Sisa stok : "+produk.getStokProduk());
                 }
                 return this;
@@ -62,7 +63,8 @@ public class Main extends javax.swing.JFrame {
             @Override
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if(value instanceof Produk produk){
+                if(value instanceof Produk){
+                     Produk produk = Produk.class.cast(value);
                     setText(produk.getNamaProduk());
                 }
                 return this;
@@ -72,7 +74,8 @@ public class Main extends javax.swing.JFrame {
             @Override
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if(value instanceof Produk produk){
+                if(value instanceof Produk ){
+                     Produk produk = Produk.class.cast(value);
                     setText(produk.getNamaProduk());
                 }
                 return this;
@@ -82,7 +85,8 @@ public class Main extends javax.swing.JFrame {
             @Override
             public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                if(value instanceof Produk produk){
+                if(value instanceof Produk ){
+                     Produk produk = Produk.class.cast(value);
                     setText(produk.getNamaProduk());
                 }
                 return this;
